@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->date('data_consulta');
             $table->text('descricao');
-            $table->foreignId('animal_id')->constrained('animais')->onDelete('cascade');
-            $table->foreignId('veterinario_id')->constrained('veterinarios')->onDelete('cascade');
+            //$table->foreignId('animal_id')->constrained('animais')->onDelete('cascade');
+            //$table->foreignId('veterinario_id')->constrained('veterinarios')->onDelete('cascade');
             $table->timestamps();
         });
     }
