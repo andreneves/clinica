@@ -5,11 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Animal extends Model
+class Especie extends Model
 {
     use HasFactory;
 
-    protected $table = 'animais';
+    /**
+     * A tabela associada ao model.
+     *
+     * @var string
+     */
+    protected $table = 'especies';
 
     /**
      * Os atributos que podem ser atribuídos em massa.
@@ -18,14 +23,7 @@ class Animal extends Model
      */
     protected $fillable = [
         'nome',
-        'idade',
-        'raca',
-        'sexo',
-        'peso',
-        'cor',
-        'especie_id',
-        'cliente_id',
-        'observacoes',
+        'descricao',
     ];
 
 }
