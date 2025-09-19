@@ -25,14 +25,14 @@ Abra o terminal e execute o código entre aspas "copy .env.example .env"
 
 ### 4) Mude o nome do banco no arquivo .env
 Deve estar na linha 14 e originalmente deve estar escrito desta forma "DB_DATABASE=laravel" mude a palavra "laravel" para o nome do banco do seu projeto
-´´´
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=clinica
 DB_USERNAME=root
 DB_PASSWORD=
-´´´
+```
 
 ### 5) Instale as depedências
 Abra o terminal e execute o código entre aspas "composer install"
