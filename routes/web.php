@@ -9,3 +9,7 @@ Route::get('/', function () {
 
 
 Route::get('/animal', [AnimalController::class, 'index']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
