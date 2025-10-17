@@ -9,6 +9,11 @@ Route::get('/', function () {
 
 
 Route::get('/animal', [AnimalController::class, 'index']);
+
+Route::get('/animal/{id}', [AnimalController::class, 'show']);
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
