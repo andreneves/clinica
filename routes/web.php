@@ -7,10 +7,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Animal Routes
 
-Route::get('/animal', [AnimalController::class, 'index']);
+Route::get('/animal', [AnimalController::class, 'index'])->name('animal.index');
 
-Route::get('/animal/{id}', [AnimalController::class, 'show']);
+Route::get('/animal/create', [AnimalController::class, 'create'])->name('animal.create');
+
+Route::post('/animal', [AnimalController::class, 'store'])->name('animal.store');
+
+Route::get('/animal/{id}', [AnimalController::class, 'show'])->name('animal.show');
+
 
 
 

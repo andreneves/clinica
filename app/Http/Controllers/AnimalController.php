@@ -21,7 +21,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view('animal.animal_create');
     }
 
     /**
@@ -29,7 +29,27 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+
+        $validated = $request->validate([
+            'nome' => 'required|min:3',
+            'especie' => 'required',
+            'raca' => 'required',
+            'idade' => 'required',
+            'nomeDono' => 'required',
+        ]);
+
+        $animal = new Animal();
+        $animal->nome = $request->nome;
+        $animal->especie = $request->especie;
+        $animal->raca = $request->raca;
+        $animal->idade = $request->idade;
+        $animal->nomeDono = $request->nomeDono;
+        $animal->save();
+
+        return redirect()->route('animal.index')->with('message', 'Animal cadastrado com sucesso!');
+
     }
 
     /**

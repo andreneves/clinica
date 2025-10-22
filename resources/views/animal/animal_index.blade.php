@@ -6,6 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Animal</div>
+                <a href="{{ url('/animal/create' ) }}" class="btn btn-success">CRIAR</a>
+
+                @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
 
                 <div class="card-body">
                     <table class="table">
