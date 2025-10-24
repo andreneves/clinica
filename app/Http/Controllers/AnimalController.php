@@ -31,7 +31,6 @@ class AnimalController extends Controller
     {
         //dd($request->all());
 
-
         $validated = $request->validate([
             'nome' => 'required|min:3',
             'especie' => 'required',
@@ -66,7 +65,9 @@ class AnimalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $animal = Animal::find($id);
+        return view('animal.animal_edit', compact('animal'));
+
     }
 
     /**
@@ -74,7 +75,25 @@ class AnimalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $validated = $request->validate([
+            'nome' => 'required|min:3',
+            'especie' => 'required',
+            'raca' => 'required',
+            'idade' => 'required',
+            'nomeDono' => 'required',
+        ]);
+
+        $animal = Animal::find($id);
+        $animal->nome = $request->nome;
+        $animal->especie = $request->especie;
+        $animal->raca = $request->raca;
+        $animal->idade = $request->idade;
+        $animal->nomeDono = $request->nomeDono;
+        $animal->save();
+
+        return redirect()->route('animal.index')->with('message', 'Animal foi atualizado com sucesso!');
+
     }
 
     /**
@@ -82,6 +101,9 @@ class AnimalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $animal = Animal::find($id);
+        $animal->delete();
+
+        return redirect()->route('animal.index')->with('message', 'Animal excluido com sucesso!');
     }
 }

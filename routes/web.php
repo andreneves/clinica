@@ -17,8 +17,11 @@ Route::post('/animal', [AnimalController::class, 'store'])->name('animal.store')
 
 Route::get('/animal/{id}', [AnimalController::class, 'show'])->name('animal.show');
 
+Route::get('/animal/{id}/edit', [AnimalController::class, 'edit'])->name('animal.edit');
 
+Route::put('/animal/{id}', [AnimalController::class, 'update'])->name('animal.update');
 
+Route::delete('/animal/{id}', [AnimalController::class, 'destroy'])->name('animal.destroy');
 
 Auth::routes();
 
