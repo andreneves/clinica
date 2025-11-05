@@ -23,9 +23,6 @@ class Animal extends Model
         'sexo',
         'peso',
         'cor',
-        'especie_id',
-        'cliente_id',
-        'observacoes',
     ];
 
 }
